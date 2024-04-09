@@ -33,6 +33,7 @@ export default function Header() {
             href="/trupiano_resume.pdf"
             rel="noopener noreferrer"
             target="_blank"
+            disableElevation={true}
           >
             Resumé
           </Button>

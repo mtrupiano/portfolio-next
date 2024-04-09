@@ -14,7 +14,7 @@ export default function ExternalLinks() {
         target="_blank"
         aria-label="Go to Mark Trupiano's LinkedIn profile"
       >
-        <LinkedIn />
+        <LinkedIn color="primary" />
       </a>
       <a 
         href="https://www.github.com/mtrupiano" 
@@ -22,7 +22,7 @@ export default function ExternalLinks() {
         target="_blank"
         aria-label="Go to Mark Trupiano's GitHub profile"
       >
-        <GitHub />
+        <GitHub color="primary" />
       </a>
     </Stack>
   );
