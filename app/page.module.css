@@ -5,3 +5,48 @@
   align-items: center;
   padding: 6rem;
 }
+
+.text-anchor-selected {
+  display: block;
+  position: relative;
+}
+
+.text-anchor-selected::before {
+  height: 2px;
+  width: 100%;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+}
+
+.text-anchor {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.text-anchor:hover {
+  color: #000;
+}
+
+.text-anchor::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: top left;
+}
+
+.text-anchor:hover::before {
+  transform: scaleX(1);
+}
