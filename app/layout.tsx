@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Jost } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost",
+});
 
 export const metadata: Metadata = {
   title: "Mark S. Trupiano",
@@ -16,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={jost.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
