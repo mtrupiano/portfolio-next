@@ -8,6 +8,7 @@ import {
 
 import ExternalLinks from "./components/ExternalLinks";
 import Header from "./components/Header";
+import style from "./page.module.css";
 
 const theme = createTheme({
   palette: {
@@ -41,11 +42,13 @@ const theme = createTheme({
 export default function Client({children}) {
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-        <Header />
-        {children}
-        <ExternalLinks />
-      </Container>
+      <main className={style.main}>
+        <Container>
+          <Header />
+          {children}
+          <ExternalLinks />
+        </Container>
+      </main>
     </ThemeProvider>
   );
 };
