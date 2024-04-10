@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Grid, Button, Stack, Link as MuiLink } from "@mui/material";
+import { Grid, Button, Stack } from "@mui/material";
 import Wordmark from "./Wordmark";
-import style from "../../page.module.css"
+import style from "./header.module.css";
 
 export default function Header() {
   const pathname = usePathname();
