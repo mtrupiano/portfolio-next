@@ -9,13 +9,26 @@ import style from "./header.module.css";
 export default function Header() {
   const pathname = usePathname();
   return (
-    <Grid container justifyContent="space-between" alignItems="center">
-      <Grid item>
+    <Grid 
+      container
+      justifyContent="space-between" 
+      alignItems="center"
+      rowSpacing={1}
+    >
+      <Grid item xs={12} sm={12} md="auto">
         <Wordmark />
       </Grid>
 
-      <Grid item>
-        <Stack direction="row" spacing={4} alignItems="center">
+      <Grid item xs={12} sm={12} md="auto">
+        <Stack 
+          direction="row"
+          spacing={{
+            xs: 2,
+            sm: 4,
+          }}
+          alignItems="center"
+          justifyContent={{ xs: "center", md: "flex-start" }}
+        >
           <Link 
             href="/projects" 
             className={pathname === "/projects" ? style["text-anchor-selected"] : style["text-anchor"]}

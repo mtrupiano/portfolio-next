@@ -4,11 +4,20 @@ import styles from "./header.module.css"
 
 export default function Wordmark() {
   return (
-    <Stack direction="row">
+    <Stack direction="row" justifyContent={{ xs: "center", md: "flex-start" }}>
       <Image 
         src=""
       />
-      <Typography className={styles["trirong"]} variant="h2">
+      <Typography 
+        className={styles["trirong"]} 
+        variant="h1"
+        sx={{
+          fontSize: {
+            xs: 36,
+            sm: 64,
+          },
+        }}
+      >
         Mark S. Trupiano
       </Typography>
     </Stack>
