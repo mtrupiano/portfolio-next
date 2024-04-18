@@ -15,28 +15,29 @@ import projectContents from "./projectContents";
 export default function Projects() {
   return (
     <Container>
-      <List>
+      <List sx={{ py: 2 }}>
         {projectContents.map(project => (
           <ListItem key={`project-${project.projectName}`}>
             <Grid 
               container
-              spacing={2}
+              spacing={3}
             >
-              <Grid item alignSelf="center">
-                <a 
+              <Grid item sm="auto" xs={12} alignSelf="center" justifyContent="center">
+                <a
                   href={project.gitHub}
                   target="_blank" 
                   rel="noopener"
                 >
                   <Image
                     src={project.imageSrc}
-                    width={100}
-                    height={100}
+                    width={175}
+                    height={175}
+                    style={{ borderRadius: "8px" }}
                   />
                 </a>
               </Grid>
 
-              <Grid item>
+              <Grid item sm={7} xs={12}>
                 <Stack>
                   <Typography variant="h4">
                     {project.projectName}
@@ -47,22 +48,28 @@ export default function Projects() {
                 </Stack>
               </Grid>
 
-              <Grid item alignSelf="center">
-                <Stack>
+              <Grid item sm="auto" xs={12} alignSelf="center">
+                <Stack spacing={1}>
                   <Button
                     href={project.gitHub}
                     target="_blank"
                     rel="noopener"
+                    sx={{ fontSize: 20 }}
                   >
-                    <GitHub />GitHub
+                    <GitHub sx={{ marginRight: 1, fontSize: 28 }} />
+                    GitHub
                   </Button>
-                  <Button
-                    href={project.deployed}
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <OpenInNew />Deployed
-                  </Button>
+                  {Boolean(project.deployed) && (
+                    <Button
+                      href={project.deployed}
+                      target="_blank"
+                      rel="noopener"
+                      sx={{ fontSize: 20 }}
+                    >
+                      <OpenInNew sx={{ marginRight: 1, fontSize: 28 }} />
+                      Deployed
+                    </Button>
+                  )}
                 </Stack>
               </Grid>
 
