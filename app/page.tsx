@@ -4,7 +4,18 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <Grid container justifyContent="center">
+    <Grid 
+      container 
+      justifyContent="center" 
+      sx={{
+        px: {
+          xs: 0,
+          md: 4,
+        },
+        py: 8,
+      }}
+      spacing={4}
+    >
       <Grid item>
         <Image 
           src="/headshot.jpg"

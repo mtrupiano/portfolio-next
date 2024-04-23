@@ -84,7 +84,7 @@ export default function Contact() {
           xs: 0,
           md: 4,
         },
-        py: 4,
+        py: 8,
       }}
       columnSpacing={{
         sm: 2,

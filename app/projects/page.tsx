@@ -15,7 +15,7 @@ import projectContents from "./projectContents";
 export default function Projects() {
   return (
     <Container>
-      <List sx={{ py: 2 }}>
+      <List sx={{ py: 8 }}>
         {projectContents.map(project => (
           <ListItem key={`project-${project.projectName}`}>
             <Grid 
