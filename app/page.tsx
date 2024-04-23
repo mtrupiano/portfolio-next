@@ -20,13 +20,12 @@ export default function Home() {
         <Image 
           src="/headshot.jpg"
           alt="mark-headshot"
-          height={350}
+          height={400}
           width={400}
           className={styles["rounded-image"]}
         />
       </Grid>
       <Grid item>
-
         <Typography variant="h4">
           Hello!
         </Typography>
