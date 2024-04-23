@@ -30,6 +30,7 @@ export default function Projects() {
                 >
                   <Image
                     src={project.imageSrc}
+                    alt={project.imageAlt}
                     width={175}
                     height={175}
                     style={{ borderRadius: "8px" }}

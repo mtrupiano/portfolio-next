@@ -8,7 +8,7 @@ export default function Home() {
       <Grid item>
         <Image 
           src="/headshot.jpg"
-          alt="headshot"
+          alt="mark-headshot"
           height={350}
           width={400}
           className={styles["rounded-image"]}
