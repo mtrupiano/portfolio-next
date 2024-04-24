@@ -1,4 +1,4 @@
-export default [
+const projectContents = [
   {
     imageSrc: "/headshot.jpg",
     imageAlt: "mark-headshot",
@@ -29,3 +29,5 @@ export default [
     deployed: "",
   },
 ];
+
+export default projectContents;
