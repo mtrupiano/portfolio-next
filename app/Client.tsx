@@ -10,7 +10,11 @@ import ExternalLinks from "./components/ExternalLinks";
 import Header from "./components/Header";
 import muiTheme from "./muiTheme";
 
-export default function Client({children}) {
+export default function Client({
+  children,
+}: Readonly<{
+    children: React.ReactNode;
+}>) {
   return (
     <ThemeProvider theme={muiTheme}>
       <Header />
