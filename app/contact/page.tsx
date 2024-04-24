@@ -23,15 +23,21 @@ const listContainerStyle = {
   borderColor: "divider",
 };
 
+interface FormValues {
+  from_name: string,
+  reply_to: string,
+  message: string,
+}
+
 export default function Contact() {
 
   const [sending, setSending] = useState(false);
   const [successSnackbar, setSuccessSnackbar] = useState(false);
   const [errorSnackbar, setErrorSnackbar] = useState(false);
 
-  const validate = (values) => {
-    const errors = {};
-    if (!values.from_name.trim()) errors.name = "Required";
+  const validate = (values: FormValues) => {
+    const errors: any = {};
+    if (!values.from_name.trim()) errors.from_name = "Required";
     if (!values.reply_to) {
       errors.reply_to = 'Required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.reply_to)) {
@@ -48,13 +54,17 @@ export default function Contact() {
       message: "",
     },
     validate,
-    onSubmit: (values) => {
+    onSubmit: (values: FormValues) => {
       setSending(true);
       
       emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        values,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        {
+          from_name: values.from_name,
+          reply_to: values.reply_to,
+          message: values.message,
+        },
         {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
         }
@@ -71,7 +81,7 @@ export default function Contact() {
     },
   });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     formik.handleSubmit(event);
   };
