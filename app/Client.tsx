@@ -13,7 +13,8 @@ import muiTheme from "./muiTheme";
 export default function Client({children}) {
   return (
     <ThemeProvider theme={muiTheme}>
-      <Container 
+      <Header />
+      <Container
         sx={{
           px: {
             xs: 2,
@@ -21,13 +22,12 @@ export default function Client({children}) {
             md: 6,
             lg: 8,
           },
-          py: 6,
+          paddingBottom: 4,
         }}
       >
-        <Header />
         {children}
-        <ExternalLinks />
       </Container>
+      <ExternalLinks />
     </ThemeProvider>
   );
 };

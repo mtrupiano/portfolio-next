@@ -14,6 +14,15 @@ export default function Header() {
       justifyContent="space-between" 
       alignItems="center"
       rowSpacing={1}
+      sx={{
+        px: {
+          xs: 2,
+          sm: 4,
+          lg: 6,
+          xl: 12,
+        },
+        py: 6,
+      }}
     >
       <Grid item xs={12} sm={12} md="auto">
         <Wordmark />

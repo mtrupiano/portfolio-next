@@ -12,7 +12,6 @@ export default function Home() {
           xs: 0,
           md: 4,
         },
-        py: 8,
       }}
       spacing={4}
     >

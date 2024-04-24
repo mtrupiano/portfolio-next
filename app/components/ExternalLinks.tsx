@@ -7,7 +7,19 @@ import { Grid, Stack } from "@mui/material";
 
 export default function ExternalLinks() {
   return (
-    <Stack direction="row" spacing={3} paddingTop={8}>
+    <Stack 
+      direction="row" 
+      spacing={3}
+      sx={{
+        px: {
+          xs: 2,
+          sm: 4,
+          lg: 6,
+          xl: 12,
+        },
+        py: 6,
+      }}
+    >
       <a 
         href="https://www.linkedin.com/in/mark-trupiano" 
         rel="noreferrer noopener" 
