@@ -8,18 +8,20 @@ export default function Wordmark() {
       <Image 
         src=""
       />
-      <Typography 
-        className={styles["trirong"]} 
-        variant="h1"
-        sx={{
-          fontSize: {
-            xs: 36,
-            sm: 64,
-          },
-        }}
-      >
-        Mark S. Trupiano
-      </Typography>
+      <a href="/">
+        <Typography 
+          className={styles["trirong"]} 
+          variant="h1"
+          sx={{
+            fontSize: {
+              xs: 36,
+              sm: 64,
+            },
+          }}
+        >
+          Mark S. Trupiano
+        </Typography>
+      </a>
     </Stack>
   ); 
 }
