@@ -20,7 +20,6 @@ export default function Client({children}) {
             xs: 2,
             sm: 4,
             md: 6,
-            lg: 8,
           },
           paddingBottom: 4,
         }}
