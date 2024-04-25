@@ -28,6 +28,7 @@ export default function EmailForm() {
   const [sending, setSending] = useState(false);
   const [successSnackbar, setSuccessSnackbar] = useState(false);
   const [errorSnackbar, setErrorSnackbar] = useState(false);
+  const [captchaErrorSnackbar, setCaptchaErrorSnackbar] = useState(false);
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const validate = (values: FormValues) => {
@@ -73,7 +74,7 @@ export default function EmailForm() {
       });
 
       if (res?.data?.success === false) {
-        setErrorSnackbar(true);
+        setCaptchaErrorSnackbar(true);
         setSending(false);
         return;
       }
@@ -151,8 +152,6 @@ export default function EmailForm() {
 
       <Snackbar
         open={successSnackbar}
-        onClose={() => setSuccessSnackbar(false)}
-        message="Sent!"
         autoHideDuration={4000}
         anchorOrigin={{
           vertical: "top",
@@ -170,8 +169,6 @@ export default function EmailForm() {
 
       <Snackbar
         open={errorSnackbar}
-        onClose={() => setErrorSnackbar(false)}
-        message="There was an error sending your message..."
         autoHideDuration={4000}
         anchorOrigin={{
           vertical: "top",
@@ -184,6 +181,22 @@ export default function EmailForm() {
           onClose={() => setErrorSnackbar(false)}
         >
           There was an error sending your message...
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={captchaErrorSnackbar}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+      >
+        <Alert
+          severity="error"
+          variant="filled"
+          onClose={() => setCaptchaErrorSnackbar(false)}
+        >
+          This page is protected by reCAPTCHA; please disable any adblockers before attempting to send a message.
         </Alert>
       </Snackbar>
     </>
