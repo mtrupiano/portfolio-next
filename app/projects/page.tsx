@@ -14,18 +14,17 @@ import projectContents from "./projectContents";
 export default function Projects() {
   return (
     <List>
-      {projectContents.map(project => (
+      {projectContents.map((project) => (
         <ListItem key={`project-${project.projectName}`}>
-          <Grid 
-            container
-            spacing={3}
-          >
-            <Grid item sm="auto" xs={12} alignSelf="center" justifyContent="center">
-              <a
-                href={project.gitHub}
-                target="_blank" 
-                rel="noopener"
-              >
+          <Grid container spacing={3}>
+            <Grid
+              item
+              sm="auto"
+              xs={12}
+              alignSelf="center"
+              justifyContent="center"
+            >
+              <a href={project.gitHub} target="_blank" rel="noopener">
                 <Image
                   src={project.imageSrc}
                   alt={project.imageAlt}
@@ -38,12 +37,12 @@ export default function Projects() {
 
             <Grid item sm={7} xs={12}>
               <Stack>
-                <Typography variant="h4">
-                  {project.projectName}
-                </Typography>
-                <Typography variant="body1">
-                  {project.description}
-                </Typography>
+                <Typography variant="h4">{project.projectName}</Typography>
+                {typeof project.description === "string" ? (
+                  <Typography variant="body1">{project.description}</Typography>
+                ) : (
+                  project.description()
+                )}
               </Stack>
             </Grid>
 
@@ -71,7 +70,6 @@ export default function Projects() {
                 )}
               </Stack>
             </Grid>
-
           </Grid>
         </ListItem>
       ))}
